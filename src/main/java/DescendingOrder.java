@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
 public class DescendingOrder {
+    private DescendingOrder() {}
+
     public static int sortDesc(int num) {
-        StringBuffer integerString = new StringBuffer("");
+        StringBuilder integerString = new StringBuilder("");
 
         // Parse into individual ints
         ArrayList<Integer> array = new ArrayList<Integer>();
