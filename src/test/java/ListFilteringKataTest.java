@@ -1,4 +1,3 @@
-import org.example.ListFilteringKata;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
