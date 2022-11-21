@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DescendingOrder {
     private DescendingOrder() {}
@@ -12,8 +13,14 @@ public class DescendingOrder {
             int temp = num % 10;
             array.add(temp);
             num /= 10;
-            integerString.append(temp);
         } while  (num > 0);
+
+        // Sort the array
+        Collections.sort(array, Collections.reverseOrder());
+
+        for (int i = 0; i < array.size(); i++) {
+            integerString.append(array.get(i));
+        }
 
         return Integer.parseInt(integerString.toString());
     }
