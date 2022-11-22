@@ -34,4 +34,13 @@ public class MetroTest {
         list.add(new int[] {2,5});
         assertEquals(5, metro.countPassengers(list));
     }
+
+    @Test
+    public void test2() {
+        ArrayList<int[]> list = new ArrayList<int[]>();
+        list.add(new int[] {4,0});
+        list.add(new int[] {2,6});
+        list.add(new int[] {10,10});
+        assertEquals(0, metro.countPassengers(list));
+    }
 }
