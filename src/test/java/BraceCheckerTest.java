@@ -6,9 +6,29 @@ public class BraceCheckerTest {
     private BraceChecker checker = new BraceChecker();
 
     @Test
-    public void testValid() {
+    public void testValidParenthesis() {
         assertEquals(true, checker.isValid("()"));
     }
+
+    @Test
+    public void testValidBraces() {
+        assertEquals(true, checker.isValid("{}"));
+    }
+
+    @Test
+    public void testValidBrackets() {
+        assertEquals(true, checker.isValid("[]"));
+    }
+
+//    @Test
+//    public void testMultipleOpenCloseBraces() {
+//        assertEquals(true, checker.isValid("({})"));
+//    }
+
+//    @Test
+//    public void testValidNestedBraces() {
+//        assertEquals(true, checker.isValid("([{}])"));
+//    }
 
     @Test
     public void testInvalid() {
