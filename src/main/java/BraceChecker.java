@@ -5,24 +5,32 @@ public class BraceChecker {
 
         for (int i = 0; i < stringArray.length; i++) {
             System.out.println(stringArray[i]);
-            // See if initial is open
-            if (stringArray[i].equals("("))
-                if (i+1 < stringArray.length)
-                    if (stringArray[i+1].equals(")"))
-                        valid = true;
+            valid = findMatch(stringArray, i,"(", ")");
+            if (valid == true) {
+                i++;
+                continue;
+            }
 
-            if (stringArray[i].equals("{"))
-                if (i+1 < stringArray.length)
-                    if (stringArray[i+1].equals("}"))
-                        valid = true;
+            valid = findMatch(stringArray, i,"{", "}");
+            if (valid == true) {
+                i++;
+                continue;
+            }
 
-            if (stringArray[i].equals("["))
-                if (i+1 < stringArray.length)
-                    if (stringArray[i+1].equals("]"))
-                        valid = true;
-
+            valid = findMatch(stringArray, i,"[", "]");
+            if (valid == true)
+                i++;
         }
 
+        return valid;
+    }
+
+    private static boolean findMatch(String[] stringArray, int i, String openInput, String closeInput) {
+        boolean valid = false;
+        if (stringArray[i].equals(openInput))
+            if (i +1 < stringArray.length)
+                if (stringArray[i +1].equals(closeInput))
+                    valid = true;
         return valid;
     }
 }

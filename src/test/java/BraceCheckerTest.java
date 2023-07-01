@@ -6,6 +6,11 @@ public class BraceCheckerTest {
     private BraceChecker checker = new BraceChecker();
 
     @Test
+    public void testInvalidSingleBrace() {
+        assertEquals(false, checker.isValid("{"));
+    }
+
+    @Test
     public void testValidParenthesis() {
         assertEquals(true, checker.isValid("()"));
     }
@@ -20,10 +25,10 @@ public class BraceCheckerTest {
         assertEquals(true, checker.isValid("[]"));
     }
 
-//    @Test
-//    public void testMultipleOpenCloseBraces() {
-//        assertEquals(true, checker.isValid("({})"));
-//    }
+    @Test
+    public void testMultipleOpenCloseBraces() {
+        assertEquals(true, checker.isValid("(){}"));
+    }
 
 //    @Test
 //    public void testValidNestedBraces() {
