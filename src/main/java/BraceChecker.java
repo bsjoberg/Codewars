@@ -1,36 +1,28 @@
+import java.util.Stack;
+
 public class BraceChecker {
     public boolean isValid(String input) {
-        String[] stringArray = input.split("");
-        boolean valid = false;
+        if(input.length() % 2 == 1)
+            return false;
 
-        for (int i = 0; i < stringArray.length; i++) {
-            System.out.println(stringArray[i]);
-            valid = findMatch(stringArray, i,"(", ")");
-            if (valid == true) {
-                i++;
-                continue;
+        Stack<Character> stack = new Stack<Character>();
+        for(int i = 0; i < input.length(); i++)
+        {
+            if(input.charAt(i) == '(')
+            {
+                stack.push(')');
             }
-
-            valid = findMatch(stringArray, i,"{", "}");
-            if (valid == true) {
-                i++;
-                continue;
+            else if(input.charAt(i) == '{')
+            {
+                stack.push('}');
             }
-
-            valid = findMatch(stringArray, i,"[", "]");
-            if (valid == true)
-                i++;
+            else if(input.charAt(i) == '[')
+            {
+                stack.push(']');
+            }
+            else if(stack.isEmpty() || stack.pop() != input.charAt(i))
+                return false;
         }
-
-        return valid;
-    }
-
-    private static boolean findMatch(String[] stringArray, int i, String openInput, String closeInput) {
-        boolean valid = false;
-        if (stringArray[i].equals(openInput))
-            if (i +1 < stringArray.length)
-                if (stringArray[i +1].equals(closeInput))
-                    valid = true;
-        return valid;
+        return stack.isEmpty();
     }
 }

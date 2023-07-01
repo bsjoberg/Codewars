@@ -30,14 +30,19 @@ public class BraceCheckerTest {
         assertEquals(true, checker.isValid("(){}"));
     }
 
-//    @Test
-//    public void testValidNestedBraces() {
-//        assertEquals(true, checker.isValid("([{}])"));
-//    }
+    @Test
+    public void testValidNestedBraces() {
+        assertEquals(true, checker.isValid("([{}])"));
+    }
 
     @Test
     public void testInvalid() {
         assertEquals(false, checker.isValid("[(])"));
+    }
+
+    @Test
+    public void testInvalidLong() {
+        assertEquals(false, checker.isValid("[({})](]"));
     }
 
 }
