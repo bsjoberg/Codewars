@@ -27,7 +27,7 @@ public class MetroTest {
     Metro metro = new Metro();
 
     @Test
-    public void test1() {
+    public void number_of_people_on_bus_greater_than_0() {
         ArrayList<int[]> list = new ArrayList<int[]>();
         list.add(new int[] {10,0});
         list.add(new int[] {3,5});
@@ -36,7 +36,7 @@ public class MetroTest {
     }
 
     @Test
-    public void test2() {
+    public void number_of_people_on_bus_0() {
         ArrayList<int[]> list = new ArrayList<int[]>();
         list.add(new int[] {4,0});
         list.add(new int[] {2,6});
