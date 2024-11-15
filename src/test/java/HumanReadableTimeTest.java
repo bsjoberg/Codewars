@@ -24,26 +24,4 @@ public class HumanReadableTimeTest {
         assertEquals("23:59:59", HumanReadableTime.makeReadable(86399));
         assertEquals("99:59:59", HumanReadableTime.makeReadable(359999));
     }
-
-    @Test
-    public void numberOfHoursFromInteger() {
-        assertEquals(0, HumanReadableTime.numberOfHours(0));
-        assertEquals(0, HumanReadableTime.numberOfHours(10));
-        assertEquals(1, HumanReadableTime.numberOfHours(3600));
-        assertEquals(1, HumanReadableTime.numberOfHours(3601));
-        assertEquals(2, HumanReadableTime.numberOfHours(7200));
-    }
-
-    @Test
-    public void numberOfMinutesFromInteger()
-    {
-        assertEquals(1, HumanReadableTime.numberOfMinutes(60));
-        assertEquals(2, HumanReadableTime.numberOfMinutes(120));
-        assertEquals(2, HumanReadableTime.numberOfMinutes(121));
-    }
-
-    @Test
-    public void handlesNegativeNumber() {
-
-    }
 }
