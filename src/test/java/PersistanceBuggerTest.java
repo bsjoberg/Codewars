@@ -20,10 +20,15 @@ public class PersistanceBuggerTest {
     }
 
     @Test
+    public void testForNumbersWithFiveOrMoreDigits() {
+        assertEquals(2, PersistanceBugger.persistence(56712));
+    }
+
+    @Test
     public void addingDigitsOfANumber() {
-        assertEquals(9, PersistanceBugger.multiply(9));
-        assertEquals(27, PersistanceBugger.multiply(39));
-        assertEquals(63, PersistanceBugger.multiply(79));
-        assertEquals(729, PersistanceBugger.multiply(999));
+        assertEquals(9, PersistanceBugger.multiplyDigitsInANumber(9));
+        assertEquals(27, PersistanceBugger.multiplyDigitsInANumber(39));
+        assertEquals(63, PersistanceBugger.multiplyDigitsInANumber(79));
+        assertEquals(729, PersistanceBugger.multiplyDigitsInANumber(999));
     }
 }
