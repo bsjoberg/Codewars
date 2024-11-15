@@ -1,7 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.xml.crypto.dsig.spec.HMACParameterSpec;
-
 import org.junit.jupiter.api.Test;
 
 /**
