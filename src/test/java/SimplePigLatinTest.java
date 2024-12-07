@@ -16,4 +16,10 @@ public class SimplePigLatinTest {
         assertEquals("igPay atinlay siay oolcay", PigLatin.pigIt("Pig latin is cool"));
         assertEquals("hisTay siay ymay tringsay", PigLatin.pigIt("This is my string"));
     }
+
+    @Test
+    public void dontTouchPunctuationMarks()
+    {
+        assertEquals("elloHay orldWay !", PigLatin.pigIt("Hello World !"));
+    }
 }

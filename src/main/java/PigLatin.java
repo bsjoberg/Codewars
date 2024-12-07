@@ -6,7 +6,10 @@ public class PigLatin {
         String words[] = input.split(" ");
         
         for (int i = 0; i < words.length; i++) {
-            result.append(convertWordToPigLatin(words[i]));
+            if (words[i].matches("[a-zA-Z]+"))
+                result.append(convertWordToPigLatin(words[i]));
+            else
+                result.append(words[i]);
             if (i+1 < words.length)
                 result.append(" ");
         }
