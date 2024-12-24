@@ -9,37 +9,50 @@ import org.junit.jupiter.api.TestMethodOrder;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ROT13SolutionTest {
     @Test
+    void is_char_an_english_letter()
+    {
+        Assertions.assertTrue(ROT13Solution.isEnglishLetter('c'));
+        Assertions.assertFalse(ROT13Solution.isEnglishLetter('1'));
+    }
+    
+    @Test
+    void convert_char_to_rot13() {
+        Assertions.assertEquals('u', ROT13Solution.convertAlpha('h'));
+        Assertions.assertEquals('h', ROT13Solution.convertAlpha('u'));
+    }
+    
+    @Test
     @Order(1)
     @DisplayName("Strings with lower letters only")
     void testSomething1() {
       Assertions.assertEquals("uryyb", ROT13Solution.rot13("hello"), "For input: `hello`");
     }
   
-    // @Test
-    // @Order(2)
-    // @DisplayName("Strings with upper and lower case letters")
-    // void testSomething2() {
-    //   Assertions.assertEquals("UryybJbeyq", ROT13Solution.rot13("HelloWorld"), "For input: `HelloWorld`");
-    // }
+    @Test
+    @Order(2)
+    @DisplayName("Strings with upper and lower case letters")
+    void testSomething2() {
+      Assertions.assertEquals("UryybJbeyq", ROT13Solution.rot13("HelloWorld"), "For input: `HelloWorld`");
+    }
   
-    // @Test
-    // @Order(3)
-    // @DisplayName("Strings with spaces and special characters")
-    // void testSomething3() {
-    //   Assertions.assertEquals("Uryyb Jbeyq!", ROT13Solution.rot13("Hello World!"), "For input: `Hello World!`");
-    // }
+    @Test
+    @Order(3)
+    @DisplayName("Strings with spaces and special characters")
+    void testSomething3() {
+      Assertions.assertEquals("Uryyb Jbeyq!", ROT13Solution.rot13("Hello World!"), "For input: `Hello World!`");
+    }
   
-    // @Test
-    // @Order(4)
-    // @DisplayName("Strings with only special characters, digits and spaces")
-    // void testSomething4() {
-    //   Assertions.assertEquals("123@#!!#@  33", ROT13Solution.rot13("123@#!!#@  33"), "For input: `123@#!!#@  33`");
-    // }
+    @Test
+    @Order(4)
+    @DisplayName("Strings with only special characters, digits and spaces")
+    void testSomething4() {
+      Assertions.assertEquals("123@#!!#@  33", ROT13Solution.rot13("123@#!!#@  33"), "For input: `123@#!!#@  33`");
+    }
   
-    // @Test
-    // @Order(5)
-    // @DisplayName("Strings with only special characters, digits, spaces and letters")
-    // void testSomething5() {
-    //   Assertions.assertEquals("J3 ne3 va lr@e 2023$$$!äöü", ROT13Solution.rot13("W3 ar3 in ye@r 2023$$$!äöü"), "For input: `W3 ar3 in ye@r 2023$$$!äöü`");
-    // }
+    @Test
+    @Order(5)
+    @DisplayName("Strings with only special characters, digits, spaces and letters")
+    void testSomething5() {
+      Assertions.assertEquals("J3 ne3 va lr@e 2023$$$!äöü", ROT13Solution.rot13("W3 ar3 in ye@r 2023$$$!äöü"), "For input: `W3 ar3 in ye@r 2023$$$!äöü`");
+    }
 }
