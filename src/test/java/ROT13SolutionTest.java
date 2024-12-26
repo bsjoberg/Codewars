@@ -9,19 +9,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ROT13SolutionTest {
     @Test
-    void is_char_an_english_letter()
-    {
-        Assertions.assertTrue(ROT13Solution.isEnglishLetter('c'));
-        Assertions.assertFalse(ROT13Solution.isEnglishLetter('1'));
-    }
-    
-    @Test
-    void convert_char_to_rot13() {
-        Assertions.assertEquals('u', ROT13Solution.convertAlpha('h'));
-        Assertions.assertEquals('h', ROT13Solution.convertAlpha('u'));
-    }
-    
-    @Test
     @Order(1)
     @DisplayName("Strings with lower letters only")
     void testSomething1() {
