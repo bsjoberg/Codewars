@@ -1,6 +1,6 @@
 public class MorseCodeDecoder {
     public static String decode(String input) {
-        StringBuffer outputMessage = new StringBuffer();
+        StringBuilder outputMessage = new StringBuilder();
         String trimmedInput  = input.trim();
 
         String[] words = trimmedInput.split("  ");
